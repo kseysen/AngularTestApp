@@ -1,22 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <navbar></navbar>
-<div>
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{ title }}
-    </h1>
-  </div>
-  <form>
-    <button type="button" class="btn btn-primary" (click)="myClickFunction($event)">Test Cypress Button</button>
-    <div id="resultClick">
-      {{result}}
-    </div> 
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" (keyup)="onKey($event)" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    </div> 
-    <div id="resultEmail">
-      {{email}}
-    </div>
-  </form>
-</div>
+<router-outlet></router-outlet>
+
