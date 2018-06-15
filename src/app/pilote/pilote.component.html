@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div *ngFor="let pilote of pilotes">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="http://placehold.it/300x150" alt="">
+          <div class="caption">
+              <h4>{{pilote.name}}</h4>
+              <p>Age :  {{pilote.age}}</p>
+              <p>Catégories : {{pilote.categories}} </p>
+              <p>Description du pilote </p>
+              <p><a href="#" class="btn btn-info btn-xs" role="button">Résultats</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

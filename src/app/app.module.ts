@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
+
 
 import { AppComponent } from './app.component';
 import { Home2Component } from './home2/home2.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { Home3Component } from './home3/home3.component';
+import { PiloteComponent } from './pilote/pilote.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,10 +31,12 @@ const appRoutes: Routes = [
     NavbarComponent,
     Home2Component,
     HomeComponent,
-    Home3Component
+    Home3Component,
+    PiloteComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

@@ -5,9 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home2.component.html',
   styleUrls: ['./home2.component.css']
 })
+
 export class Home2Component implements OnInit {
 
+  colors = ['rouge', 'bleu', 'vert'];
   constructor() { }
+
+  
 
   ngOnInit() {
   }

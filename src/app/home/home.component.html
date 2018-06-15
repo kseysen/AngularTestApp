@@ -1,4 +1,12 @@
-<div>
+<div *ngIf="!connected">
+  <div  style="text-align:center">
+      <h1>
+          Veuillez vous connecter !
+      </h1>
+      <button type="button" class="btn btn-primary" (click)="myClickConnexionFunction($event)">Connexion</button>
+  </div>
+</div>
+<div *ngIf="connected">
     <div style="text-align:center">
       <h1>
         Welcome to {{ title }}
@@ -17,4 +25,4 @@
         {{email}}
       </div>
     </form>
-  </div>
+</div>
