@@ -42,15 +42,15 @@ export class HomeComponent implements OnInit {
     //alert("Button is clicked");
     this.result = 'test click';
     console.log(event);
- }
- myClickConnexionFunction(event) { 
+  }
+  myClickConnexionFunction(event) { 
   //alert("Button is clicked");
   this.connected = true;
   console.log(event);
-}
+  }
 
-   onKey(event: any) {
-    this.email = event.target.value;
-   }
+  onKey(event: any) {
+  this.email = event.target.value;
+  }
 
 }

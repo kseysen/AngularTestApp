@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { Home3Component } from './home3/home3.component';
 import { PiloteComponent } from './pilote/pilote.component';
+import { PiloteService } from './services/pilote.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -42,7 +43,9 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [
+    PiloteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

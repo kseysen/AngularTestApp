@@ -1,5 +1,6 @@
-
-export const PILOTS: any[] =
+export class PiloteService {
+  
+Pilotes =
 [
   {
     id: 1,
@@ -20,3 +21,4 @@ export const PILOTS: any[] =
     categories: 'Test',
   },
 ]
+}

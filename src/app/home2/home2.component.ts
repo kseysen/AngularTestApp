@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PiloteService } from '../services/pilote.service';
+
 
 @Component({
   selector: 'app-home2',
@@ -8,12 +10,29 @@ import { Component, OnInit } from '@angular/core';
 
 export class Home2Component implements OnInit {
 
-  colors = ['rouge', 'bleu', 'vert'];
-  constructor() { }
-
+  isAuth = false;
   
+  pilotes: any[];
 
-  ngOnInit() {
+  colors = ['rouge', 'bleu', 'vert'];
+  //lastUpdate = new Date();
+
+  lastUpdate = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(
+      () => {
+        resolve(date);
+      }, 2000 
+    );
+  });
+
+  constructor(private piloteService: PiloteService) { 
+    
   }
 
+  ngOnInit() {
+    this.pilotes = this.piloteService.Pilotes;
+  }
+
+  
 }

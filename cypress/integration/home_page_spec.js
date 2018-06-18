@@ -1,10 +1,10 @@
 describe('My First Test', function() {
     it('Visits the testApp Cypress.io Angular 5', function() {
-      cy.visit('/');
+      //given('I open The testApp', () => {
+        cy.visit('/');
+      //})
 
-      //cy.pause();
-
-      cy.contains('Test Cypress Button').click();
+      /*cy.contains('Test Cypress Button').click();
       cy.get('#resultClick').contains('test click');
 
       cy.get('#exampleInputEmail1').type('email').should('have.value', 'email');
@@ -14,6 +14,6 @@ describe('My First Test', function() {
       cy.url().should('include', '/home2');
 
       cy.get('#home3').click();
-      cy.url().should('include', '/home3');
+      cy.url().should('include', '/home3');*/
     })
   })
