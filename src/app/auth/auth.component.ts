@@ -2,19 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../services/auth.service';
-
-
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
-export class HomeComponent implements OnInit {
+export class AuthComponent implements OnInit {
 
   authStatus: boolean;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService , private router: Router) { }
 
   ngOnInit() {
     this.authStatus = this.authService.isAuth;
@@ -25,6 +24,7 @@ export class HomeComponent implements OnInit {
       () => {
         console.log('Sign in successful!');
         this.authStatus = this.authService.isAuth;
+        this.router.navigate(['home4']);
       }
     );
   }

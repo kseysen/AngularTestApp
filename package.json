@@ -24,6 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^2.1.0",
     "@reactivex/rxjs": "^6.2.1",
     "bootstrap": "^4.1.1",
+    "cli": "^1.0.1",
     "core-js": "^2.5.4",
     "cypress": "^3.0.1",
     "git": "^0.1.5",
