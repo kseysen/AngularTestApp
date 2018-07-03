@@ -13,7 +13,7 @@ export class Home2Component implements OnInit {
   isAuth = false;
   
   pilotes: any[];
-
+  secondes: number;
   colors = ['rouge', 'bleu', 'vert'];
   //lastUpdate = new Date();
 

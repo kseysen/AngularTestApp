@@ -5,9 +5,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" id="home" routerLink="home" routerLinkActive="active">Authentification</a>
-      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link" id="auth" routerLink="auth" routerLinkActive="active">Authentification</a>
+      </li>-->
       <li class="nav-item">
         <a class="nav-link"  id="home2" routerLink="home2" routerLinkActive="active">Résultats</a>
       </li>
@@ -15,9 +15,12 @@
           <a class="nav-link" id="home3" routerLink="home3" routerLinkActive="active">Pilotes</a>
       </li>
       <li class="nav-item">
-            <a class="nav-link" id="home4" routerLink="home4" routerLinkActive="active">Appareils</a>
+            <a class="nav-link" id="appareils" routerLink="appareils" routerLinkActive="active">Appareils</a>
       </li>
   </ul>
+  <div class="navbar-right" style="color:white">
+    <p>Vous êtes connecté depuis {{ secondes }} secondes !</p>
+  </div>
   </div>
   </nav>
   

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../services/auth.service';
-import { RouterModule, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -24,7 +22,7 @@ export class AuthComponent implements OnInit {
       () => {
         console.log('Sign in successful!');
         this.authStatus = this.authService.isAuth;
-        this.router.navigate(['home4']);
+        this.router.navigate(['appareils']);
       }
     );
   }

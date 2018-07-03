@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 
 
@@ -19,14 +18,20 @@ import { PiloteService } from './services/pilote.service';
 import { AppareilService } from './services/appareil.service';
 import { AuthService } from './services/auth.service';
 import { AuthComponent } from './auth/auth.component';
+import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 
 const appRoutes: Routes = [
   { path: 'auth', component: AuthComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'home2', component: Home2Component },
-  { path: 'home3', component: Home3Component },
-  { path: 'home4', component: Home4Component },
+  { path: 'home', canActivate: [AuthGuard],component: HomeComponent },
+  { path: 'home2', canActivate: [AuthGuard],component: Home2Component },
+  { path: 'home3', canActivate: [AuthGuard],component: Home3Component },
+  { path: 'appareils', canActivate: [AuthGuard],component: Home4Component },
+  { path: 'appareils/:id', canActivate: [AuthGuard],component: SingleAppareilComponent },
+  { path: 'not-found', component: FourOhFourComponent },
+  { path: '**', redirectTo: 'not-found' },
   { path: '',
     redirectTo: '/auth',
     pathMatch: 'full'
@@ -45,7 +50,9 @@ const appRoutes: Routes = [
     Home4Component,
     PiloteComponent,
     AppareilComponent,
-    AuthComponent
+    AuthComponent,
+    SingleAppareilComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,8 @@ const appRoutes: Routes = [
   providers: [
     PiloteService,
     AppareilService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
