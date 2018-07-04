@@ -1,3 +1,12 @@
-<h2>Authentification</h2>
-<button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn()">Se connecter</button>
-<button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se déconnecter</button>
+<h4>Interpolation</h4>
+<div>{{binding}}</div>
+<h4>Property Binding</h4>
+<div align="{{alignement}}" >Personne : {{person}} | Age : {{age}} | Adresse : {{address.street}}</div>
+<h4>Event Binding</h4>
+<button (click)="modifierPersonne()">Modifier personne</button>
+<h4>Two way Data Binding</h4>
+<ma-taille [(taille)]="maTaille"></ma-taille>
+<div [style.font-size.px]="maTaille">texte resizer</div>
+
+<h4>Attribute Directive</h4>
+<div [appHighlight]="'yellow'">Texte en highlight</div>

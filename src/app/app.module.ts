@@ -21,6 +21,9 @@ import { AuthComponent } from './auth/auth.component';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { MatailleComponent } from './mataille/mataille.component';
+import { HighlightDirective } from './highlight.directive';
+import { LoggerService } from "./services/logger.service";
 
 
 const appRoutes: Routes = [
@@ -52,7 +55,9 @@ const appRoutes: Routes = [
     AppareilComponent,
     AuthComponent,
     SingleAppareilComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    MatailleComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,8 @@ const appRoutes: Routes = [
     PiloteService,
     AppareilService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    LoggerService
   ],
   bootstrap: [AppComponent]
 })

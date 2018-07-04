@@ -1,9 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { AuthService } from '../services/auth.service';
-
-
 
 @Component({
   selector: 'app-home',
@@ -12,26 +7,24 @@ import { AuthService } from '../services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  authStatus: boolean;
+  maTaille: number= 15;
+  binding: string='bindingTest';
+  person:string= 'John Doe';
 
-  constructor(private authService: AuthService) { }
+  age:number= 30;
+
+  address:any= {street:'rue du Paradis', city:'75010 Paris'};
+
+  alignement:string = 'right';
+
+  modifierPersonne() {
+
+    this.person = 'Another man';
+  }
+
+  constructor() { }
 
   ngOnInit() {
-    this.authStatus = this.authService.isAuth;
-  }
-
-  onSignIn() {
-    this.authService.signIn().then(
-      () => {
-        console.log('Sign in successful!');
-        this.authStatus = this.authService.isAuth;
-      }
-    );
-  }
-
-  onSignOut() {
-    this.authService.signOut();
-    this.authStatus = this.authService.isAuth;
   }
 
 }
