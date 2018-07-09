@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PILOTS } from './mock-pilotes';
+import {PiloteService} from '../services/pilote.service';
+import {Pilote} from '../services/pilote'
 
 @Component({
   selector: 'app-pilote',
@@ -8,12 +9,16 @@ import { PILOTS } from './mock-pilotes';
 })
 export class PiloteComponent implements OnInit {
 
-  pilotes = PILOTS;
-  //pilotName: string = 'Seysen';
-  //pilotPrenom : string = 'Kevin';
-  constructor() { }
+  pilotes: Pilote[];
+  constructor(private piloteService : PiloteService) { }
 
   ngOnInit() {
+    this
+    .piloteService
+    .getPilotesFromServer()
+    .subscribe((data: Pilote[]) => {
+      this.pilotes = data;
+    });
   }
 
 }

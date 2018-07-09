@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PiloteService } from '../services/pilote.service';
-
 
 @Component({
   selector: 'app-home2',
@@ -26,12 +24,11 @@ export class Home2Component implements OnInit {
     );
   });
 
-  constructor(private piloteService: PiloteService) { 
+  constructor() { 
     
   }
 
   ngOnInit() {
-    this.pilotes = this.piloteService.Pilotes;
   }
 
   

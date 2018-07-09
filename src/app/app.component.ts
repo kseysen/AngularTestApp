@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PiloteService } from './services/pilote.service';
+import {LoggerService} from "./services/logger.service";
 
 
 @Component({
@@ -11,9 +11,10 @@ export class AppComponent {
   
   
 
-  constructor(private piloteService: PiloteService) { 
-  
-  }
+  constructor(private logger:LoggerService){
+    this.logger.info('Dans le constructeur ...');
+}
+
 
 
 
